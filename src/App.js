@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Intro from "./components/Intro/Intro";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import { useLanguage } from "./context/Language";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact/Contact";
 
 function App() {
+  const {
+    state: { data },
+  } = useLanguage();
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar />
       </header>
-    </div>
+      <main>
+        <Intro data={data.intro} />
+        <About data={data.about} />
+        <Projects data={data.projects} />
+        <Skills />
+        <Contact />
+      </main>
+    </>
   );
 }
 
