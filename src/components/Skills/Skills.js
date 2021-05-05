@@ -11,7 +11,7 @@ import DividerCurve from "../Divider";
 
 const Skills = () => {
   return (
-    <Section>
+    <Section id="skills-link">
       <Container>
         <Wrapper>
           <Title>

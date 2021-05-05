@@ -7,13 +7,16 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./style/theme";
 import GlobalStyle from "./style/GlobalStyle";
 import LanguageProvider from "./context/Language";
+import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
       <LanguageProvider>
+        <Router>
         <App />
+        </Router>
       </LanguageProvider>
     </ThemeProvider>
   </React.StrictMode>,

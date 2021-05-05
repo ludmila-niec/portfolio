@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding:2rem 2rem 6rem;
+  padding: 2rem 2rem 6rem;
   overflow: hidden;
 
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
-    padding: 3rem 3rem 8rem
+    padding: 3rem 3rem 8rem;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     padding: 0 4rem 12rem;
@@ -16,6 +16,7 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.palette.colorSecondary};
   font-size: 2.3rem;
   position: relative;
+  z-index: 5;
 
   & > .projects__subtitle-bigger {
     font-size: 2.5rem;

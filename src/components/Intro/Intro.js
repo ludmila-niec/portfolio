@@ -3,7 +3,7 @@ import { ReactComponent as Circles } from "../../assets/shapes/circles.svg";
 
 const Intro = () => {
   return (
-    <section className="intro__container" id="section-intro">
+    <section className="intro__container" id="home-link">
       <Circles className="intro__circles" />
       <div className="intro__wrapper">
         <h1 className="intro__title">

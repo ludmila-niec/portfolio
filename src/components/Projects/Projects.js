@@ -10,7 +10,7 @@ import DividerCurve from '../Divider'
 const Projects = ({ data }) => {
   const { projects } = data;
   return (
-    <section>
+    <section id='projects-link'>
       <Container>
         <Title>
           Explore my

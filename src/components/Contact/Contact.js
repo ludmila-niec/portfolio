@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Wrapper } from "./styled";
 const Contact = () => {
   return (
-    <section>
+    <section id='contact-link'>
       <Container>
         <Wrapper>
           <h1>Let's Talk!</h1>

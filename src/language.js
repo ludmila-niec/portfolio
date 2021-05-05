@@ -1,6 +1,12 @@
 export const language = {
   english: {
-    menu: ["About me", "Projects", "Skills", "Contact"],
+    menu: [
+      { title: "Home", link: "#home-link" },
+      { title: "About me", link: "#about-me-link" },
+      { title: "Projects", link: "#projects-link" },
+      { title: "Skills", link: "#skills-link" },
+      { title: "Contact", link: "#contact-link" },
+    ],
     intro: {
       description:
         "Hi! I’m Ludmila, front end developer and designer from argentina.",

@@ -1,11 +1,12 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const NavbarStyled = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 50;
+  transition: top 0.3s;
 `;
 
 export const Wrapper = styled.div`
@@ -29,4 +30,11 @@ export const Logo = styled.a`
   &:hover {
     color: #c1ff3f;
   }
+`;
+
+export const Button = styled.button`
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
 `;

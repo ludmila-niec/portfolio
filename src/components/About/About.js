@@ -23,7 +23,7 @@ const About = ({ data }) => {
   }, []);
 
   return (
-    <section id="section-about">
+    <section id="about-me-link">
       <BorderTitle>
         <AboutStyled ref={aboutDeco}>About me</AboutStyled>
       </BorderTitle>
