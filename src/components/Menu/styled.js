@@ -54,7 +54,7 @@ export const Link = styled.a`
   color: ${({ theme }) => theme.palette.colorSecondary};
   font-family: "Krona One", sans-serif;
   font-size: 2rem;
-  transition: all 0.5s ease-out;
+  transition: transform 0.5s ease-out;
   display: block;
   &:hover {
     text-decoration-color: ${({ theme }) => theme.palette.colorAccent};

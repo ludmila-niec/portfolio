@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as Circles } from "../../assets/shapes/circles.svg";
+import { animateIntro, animateScrollSection } from "../../animation/intro";
 
 const Intro = () => {
+  useEffect(() => {
+    animateIntro(".intro__title", ".intro__circles");
+    animateScrollSection(
+      ".intro__title",
+      ".intro__circles",
+      ".intro__container"
+    );
+  }, []);
   return (
-    <section className="intro__container" id="home-link">
+    <section
+      className="intro__container"
+      id="home-link"
+      style={{ position: "relative" }}
+    >
       <Circles className="intro__circles" />
       <div className="intro__wrapper">
         <h1 className="intro__title">

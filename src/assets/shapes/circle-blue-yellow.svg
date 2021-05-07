@@ -1,4 +1,4 @@
 <svg width="371" height="428" viewBox="0 0 371 428" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="89.3559" cy="303.356" r="77.5" transform="rotate(-81.8891 89.3559 303.356)" stroke="#C1FF3F" stroke-width="3"/>
-<circle cx="249.734" cy="213.734" r="187.464" transform="rotate(-81.8891 249.734 213.734)" stroke="#2D325B" stroke-opacity="0.6" stroke-width="3"/>
+<circle id='circle-yellow-project' cx="89.3559" cy="303.356" r="77.5" transform="rotate(-81.8891 89.3559 303.356)" stroke="#C1FF3F" stroke-width="3"/>
+<circle id='circle-blue-project'  cx="249.734" cy="213.734" r="187.464" transform="rotate(-81.8891 249.734 213.734)" stroke="#2D325B" stroke-opacity="0.6" stroke-width="3"/>
 </svg>

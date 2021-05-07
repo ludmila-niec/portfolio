@@ -10,6 +10,7 @@ html, body{
 width: 100%;
   min-height: 100vh;
   scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 `;
 

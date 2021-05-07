@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Section = styled.section`
  height: 150vh;
+ position:relative;
+ z-index:2;
  @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     height: 100vh;
   }

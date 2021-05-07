@@ -11,16 +11,17 @@ import {
 } from "./styled";
 import { ReactComponent as Github } from "../../../assets/icons/github-icon.svg";
 import { ReactComponent as Website } from "../../../assets/icons/website-icon.svg";
-const Project = ({ project, image }) => {
+
+const Project = ({project, image }) => {
   const { title, description, stack } = project;
   return (
     <Container className="project__container">
-      <ImageWrapper>
+      <ImageWrapper className="project__image">
         <Image src={image} />
         <Shadow />
       </ImageWrapper>
-      <Wrapper>
-        <div className='project__content'>
+      <Wrapper className='project__wrapper'>
+        <div className="project__content">
           <WrapperTitle>
             <h3 className="project__title">{title}</h3>
             <p className="project__description">{description}</p>

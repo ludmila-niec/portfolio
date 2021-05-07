@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: relative;
   padding: 2rem 2rem 6rem;
   overflow: hidden;
 
@@ -67,7 +68,8 @@ export const Wrapper = styled.div`
     position: relative;
     bottom: 120px;
     left: 50px;
-    z-index: -1;
+    /* z-index: 1; */
+    overflow: visible;
   }
   & #circle-flip {
     transform: scaleX(-1);

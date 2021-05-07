@@ -4,6 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position:relative;
+  z-index:5;
   /* padding-bottom: 6rem; */
 
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {

@@ -2,17 +2,32 @@ import styled from "styled-components";
 
 export const DividerContainer = styled.div`
   width: 100%;
-  transform: translateY(-60px);
+  transform: translateY(50px);
   overflow: hidden;
-
-    &.divider__projects{
-        transform: translateY(30px);
-    }
+  position: relative;
+  z-index: 1;
+  &.divider__about {
+    transform: translateY(-80px);
+  }
+  &.divider__projects {
+    transform: translateY(100%);
+  }
+  &.divider__skills {
+    z-index: 3;
+    transform: translateY(-80px);
+  }
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
-    transform: translateY(-100px);
+    &.divider__about {
+      transform: translateY(-180px);
+    }
+    &.divider__skills {
+      transform: translateY(-100px);
+    }
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    transform: translateY(-160px);
+    &.divider__skills{
+      transform: translateY(-150px);
+    }
   }
 `;
 

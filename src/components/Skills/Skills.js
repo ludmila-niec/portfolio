@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Section,
   Container,
@@ -8,13 +8,23 @@ import {
   SkillContent,
 } from "./styled";
 import DividerCurve from "../Divider";
+// animation
+import { animateSkills } from "../../animation/skills";
 
 const Skills = () => {
+  useEffect(() => {
+    animateSkills(
+      "#skills-link",
+      ".skills__front-end",
+      ".skills__back-end",
+      ".skills__tools"
+    );
+  }, []);
   return (
     <Section id="skills-link">
       <Container>
         <Wrapper>
-          <Title>
+          <Title className="skills__title">
             Skills<span className="skills__title-dot">.</span>
           </Title>
           <SkillsWrapper>
@@ -25,11 +35,11 @@ const Skills = () => {
                 - GSAP - Javascript - React - Redux -
               </p>
             </SkillContent>
-            <SkillContent>
+            <SkillContent className="skills__back-end">
               <h3>Back End</h3>
               <p>Node.js - Express.js - MongoDB - SQL - RestfulAPI</p>
             </SkillContent>
-            <SkillContent>
+            <SkillContent className="skills__tools">
               <h3>Tools</h3>
               <p>Visual Studio Code - Git - Github - Photoshop - Figma</p>
             </SkillContent>
