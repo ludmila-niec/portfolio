@@ -14,19 +14,20 @@ export const DividerContainer = styled.div`
   }
   &.divider__skills {
     z-index: 3;
-    transform: translateY(-80px);
+    width: 110%;
+    transform: translate(-10px, -50px) rotateZ(3deg);
   }
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     &.divider__about {
       transform: translateY(-180px);
     }
     &.divider__skills {
-      transform: translateY(-100px);
+      transform: translate(-10px, -100px) rotateZ(3deg);
     }
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    &.divider__skills{
-      transform: translateY(-150px);
+    &.divider__skills {
+      transform: translate(-10px, -150px) rotateZ(3deg);
     }
   }
 `;

@@ -12,6 +12,11 @@ width: 100%;
   scroll-behavior:smooth;
   overflow-x:hidden;
 }
+
+a{
+  text-decoration:none;
+  color: #2d325b
+}
 `;
 
 export default GlobalStyle;

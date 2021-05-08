@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const BorderTitle = styled.div`
   background-color: ${({ theme }) => theme.palette.colorAccent};
+  overflow: hidden;
 `;
 
-export const AboutStyled = styled.p`
+export const AboutStyled = styled.div`
   color: ${({ theme }) => theme.palette.colorSecondary};
   font-family: "Krona One", sans-serif;
   padding: 1.5rem 0;
   font-size: 1.2rem;
-  max-width: 100%;
-  text-overflow: hidden;
-  overflow: hidden;
+  /* overflow: hidden; */
+  width: max-content;
+  text-overflow: clip;
   white-space: nowrap;
 
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
@@ -33,7 +34,7 @@ export const Container = styled.div`
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
     height: 120vh;
-    padding:4rem;
+    padding: 4rem;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     height: 180vh;
@@ -112,7 +113,7 @@ export const ImageWrapper = styled.div`
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     height: 300px;
     width: 300px;
-    margin:6rem 2rem 2rem auto;
+    margin: 6rem 2rem 2rem auto;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
     height: 400px;
