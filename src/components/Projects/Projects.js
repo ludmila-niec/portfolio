@@ -1,17 +1,40 @@
 import React, { useEffect } from "react";
 import Project from "./Project";
 import { Container, Title, Wrapper } from "./styled";
-import DelilahView from "../../assets/Images/delilah-demo.png";
-import RedeemView from "../../assets/Images/redeem-demo.png";
-import GifosView from "../../assets/Images/gifos-demo.png";
+// x1 images
+import delilah_x1_jpg from "../../assets/Images/x1/delilah-demo-x1.jpg";
+import delilah_x1_webp from "../../assets/Images/x1/delilah-demo-x1.webp";
+import gifos_x1_jpg from "../../assets/Images/x1/gifos-demo-x1.jpg";
+import gifos_x1_webp from "../../assets/Images/x1/gifos-demo-x1.webp";
+import redeem_x1_jpg from "../../assets/Images/x1/redeem-demo-x1.jpg";
+import redeem_x1_webp from "../../assets/Images/x1/redeem-demo-x1.webp";
+
+// x2images
+import delilah_x2_jpg from "../../assets/Images/x2/delilah-demo-x2.jpg";
+import delilah_x2_webp from "../../assets/Images/x2/delilah-demo-x2.webp";
+import gifos_x2_jpg from "../../assets/Images/x2/gifos-demo-x2.jpg";
+import gifos_x2_webp from "../../assets/Images/x2/gifos-demo-x2.webp";
+import redeem_x2_jpg from "../../assets/Images/x2/redeem-demo-x2.jpg";
+import redeem_x2_webp from "../../assets/Images/x2/redeem-demo-x2.webp";
+
 import { ReactComponent as CircleBg } from "../../assets/shapes/circle-blue-yellow.svg";
 import DividerCurve from "../Divider";
 // animation
-import {
-  animateTitle,
-  fadeInProject,
-} from "../../animation/projects";
+import { animateTitle, fadeInProject } from "../../animation/projects";
 import { animateDivider } from "../../animation/divider";
+
+const delilahImg = {
+  small: { jpg: delilah_x1_jpg, webp: delilah_x1_webp },
+  large: { jpg: delilah_x2_jpg, webp: delilah_x2_webp },
+};
+const gifosImg = {
+  small: { jpg: gifos_x1_jpg, webp: gifos_x1_webp },
+  large: { jpg: gifos_x2_jpg, webp: gifos_x2_webp },
+};
+const redeemImg = {
+  small: { jpg: redeem_x1_jpg, webp: redeem_x1_webp },
+  large: { jpg: redeem_x2_jpg, webp: redeem_x2_webp },
+};
 
 const Projects = ({ data }) => {
   useEffect(() => {
@@ -37,11 +60,11 @@ const Projects = ({ data }) => {
           <div className="projects__subtitle-line"></div>
         </Title>
         <Wrapper>
-          <Project project={projects[0]} image={DelilahView} />
+          <Project project={projects[0]} images={delilahImg} />
           <CircleBg className="circle-bg" id="circle-flip" />
-          <Project project={projects[1]} image={GifosView} />
+          <Project project={projects[1]} images={gifosImg} />
           <CircleBg className="circle-bg" />
-          <Project project={projects[2]} image={RedeemView} />
+          <Project project={projects[2]} images={redeemImg} />
         </Wrapper>
       </Container>
       <DividerCurve

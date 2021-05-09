@@ -9,9 +9,19 @@ import {
   Paragraph,
   TitleSection,
 } from "./styled";
-import myPicture from "../../assets/Images/portfolio-picture.JPG";
+// x1 images
+import profile_x1_jpg from "../../assets/Images/x1/portfolio-picture-x1.jpg";
+import profile_x1_webp from "../../assets/Images/x1/portfolio-picture-x1.webp";
+//x2 images 
+import profile_x2_jpg from "../../assets/Images/x2/portfolio-picture-x2.jpg";
+import profile_x2_webp from "../../assets/Images/x2/portfolio-picture-x2.webp";
 // animation
 import { slideTitleBorder, animateSection } from "../../animation/about";
+
+const profileImage = {
+  small: { jpg: profile_x1_jpg, webp: profile_x1_webp },
+  large: { jpg: profile_x2_jpg, webp: profile_x2_webp },
+};
 
 const About = ({ data }) => {
   const aboutDeco = useRef(null);
@@ -27,11 +37,16 @@ const About = ({ data }) => {
   // animation
   useEffect(() => {
     slideTitleBorder(aboutDeco.current, ".border__container");
-    animateSection('.about__title', '.about__picture','.about__description','.about__container')
+    animateSection(
+      ".about__title",
+      ".about__picture",
+      ".about__description",
+      ".about__container"
+    );
   }, []);
 
   return (
-    <section >
+    <section>
       <BorderTitle className="border__container">
         <AboutStyled ref={aboutDeco}>About me</AboutStyled>
       </BorderTitle>
@@ -42,7 +57,27 @@ const About = ({ data }) => {
               About <span className="about__subtitle-me">me</span>
             </TitleSection>
             <ImageWrapper>
-              <img src={myPicture} alt="profile" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={profileImage.large.webp}
+                  media="(min-width:1200px)"
+                />
+                <source
+                  type="image/jpeg"
+                  srcSet={profileImage.large.jpg}
+                  media="(min-width:1200px)"
+                />
+                <source type="image/jpeg" srcSet={profileImage.small.webp} />
+                <source type="image/jpeg" srcSet={profileImage.small.jpg} />
+
+                <img
+                  src={profileImage.small.jpg}
+                  alt="profile"
+                  loading="lazy"
+                  height="640" width="360" 
+                />
+              </picture>
             </ImageWrapper>
           </div>
           <div className="about__description">

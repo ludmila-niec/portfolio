@@ -15,29 +15,32 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="preload" href="https://fonts.gstatic.com" />
+    <!-- <link rel="preload" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Krona+One&family=Ubuntu&display=swap"
       rel="stylesheet"
+    /> -->
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/kronaone/v9/jAnEgHdjHcjgfIb1ZcUyNoWg_8a0Ww.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2"
+      as="font"
+      crossorigin="anonymous"
     />
     <title>Ludmila's Portfolio</title>
     <style>
       body {
         background-color: #dcd1ef;
         color: #2d325b;
-        font-family: "Krona One", sans-serif;
+        font-family: "Krona One", Arial, Helvetica, sans-serif;
       }
       p {
-        font-family: "Ubuntu", sans-serif;
+        font-family: "Ubuntu", Arial, Helvetica, sans-serif;
         line-height: 35px;
       }
       .intro__container {
@@ -102,8 +105,6 @@
           position: absolute;
           right: 5%;
           top: 11%;
-          /* width: 50%;
-          height: 50%; */
         }
       }
       .intro__yellow {

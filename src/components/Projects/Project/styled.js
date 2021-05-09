@@ -4,9 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  position:relative;
-  z-index:5;
-  /* padding-bottom: 6rem; */
+  position: relative;
+  z-index: 5;
 
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
     height: unset;
@@ -17,16 +16,18 @@ export const Container = styled.div`
 `;
 export const ImageWrapper = styled.div`
   position: relative;
+
+  & > picture > .project__image-demo {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    border-radius: 20px;
+  }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    width: 60%;
+    min-width: 60%;
   }
 `;
 
-export const Image = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-`;
 export const Shadow = styled.div`
   position: absolute;
   top: 0;

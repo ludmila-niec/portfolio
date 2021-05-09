@@ -10,7 +10,6 @@ export const AboutStyled = styled.div`
   font-family: "Krona One", sans-serif;
   padding: 1.5rem 0;
   font-size: 1.2rem;
-  /* overflow: hidden; */
   width: max-content;
   text-overflow: clip;
   white-space: nowrap;
@@ -97,17 +96,16 @@ export const ImageWrapper = styled.div`
   width: 250px;
   border-radius: 100%;
   margin: 5rem 0 2rem auto;
-  background-color: pink;
+  background-color: ${({ theme }) => theme.palette.colorMain};
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
-  & > img {
+  & > picture > img {
     height: auto;
     width: 100%;
-    position: absolute;
   }
 
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {

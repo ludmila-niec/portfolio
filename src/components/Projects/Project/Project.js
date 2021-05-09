@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   ImageWrapper,
-  Image,
   Wrapper,
   WrapperSocial,
   WrapperStack,
@@ -12,15 +11,36 @@ import {
 import { ReactComponent as Github } from "../../../assets/icons/github-icon.svg";
 import { ReactComponent as Website } from "../../../assets/icons/website-icon.svg";
 
-const Project = ({project, image }) => {
+const Project = ({ project, images }) => {
   const { title, description, stack } = project;
   return (
     <Container className="project__container">
       <ImageWrapper className="project__image">
-        <Image src={image} />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={images.large.webp}
+            media="(min-width:1200px)"
+          />
+          <source
+            type="image/jpeg"
+            srcSet={images.large.jpg}
+            media="(min-width:1200px)"
+          />
+          <source type="image/jpeg" srcSet={images.small.webp} />
+          <source type="image/jpeg" srcSet={images.small.jpg} />
+
+          <img
+            src={images.small.jpg}
+            alt={title}
+            loading="lazy"
+            className="project__image-demo"
+            width="750" height="500" 
+          />
+        </picture>
         <Shadow />
       </ImageWrapper>
-      <Wrapper className='project__wrapper'>
+      <Wrapper className="project__wrapper">
         <div className="project__content">
           <WrapperTitle>
             <h3 className="project__title">{title}</h3>
