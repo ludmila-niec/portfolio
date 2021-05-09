@@ -46,17 +46,22 @@ function App() {
     state: { data },
   } = useLanguage();
   const wrapperRef = useRef(null);
+  const menuContainerRef = useRef(null);
 
   function handleOpenMenu() {
     setMenuIsOpen(true);
     wrapperRef.current.classList.add("body__backdrop");
-    document.querySelector("body").style.overflow = "hidden";
+    document.querySelector("html").style.overflow = "hidden";
   }
 
   function handleCloseMenu() {
     setMenuIsOpen(false);
     wrapperRef.current.classList.remove("body__backdrop");
-    document.querySelector("body").style.overflow = "visible";
+    document.querySelector("html").style.overflow = "visible";
+  }
+
+  function handleClickOutside() {
+    handleCloseMenu();
   }
 
   return (
@@ -68,11 +73,11 @@ function App() {
           onClose={handleCloseMenu}
         />
       )}
-      {menuIsOpen && <Backdrop />}
+      {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       <header className="App-header">
         <Navbar onOpen={handleOpenMenu} />
       </header>
-      <main>
+      <main style={{ overflowX: "hidden" }}>
         <Intro data={data.intro} />
         <About data={data.about} />
         <Projects data={data.projects} />

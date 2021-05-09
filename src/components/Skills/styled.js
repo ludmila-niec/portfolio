@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
- height: 150vh;
- position:relative;
- z-index:2;
- @media ${({ theme }) => theme.mediaQuery.mediaSm} {
+  height: 150vh;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     height: 100vh;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
@@ -13,16 +14,15 @@ export const Section = styled.section`
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     height: 120vh;
   }
-`
+`;
 
 export const Container = styled.div`
-  height:100%;
+  height: 100%;
   background-color: ${({ theme }) => theme.palette.colorSecondary};
   padding: 0 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
 
 export const Wrapper = styled.div`

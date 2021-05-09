@@ -26,10 +26,6 @@ export const Logo = styled.a`
   font-family: "Krona One", sans-serif;
   text-decoration: none;
   cursor: pointer;
-
-  &:hover {
-    color: #c1ff3f;
-  }
 `;
 
 export const Button = styled.button`

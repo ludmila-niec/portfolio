@@ -22,7 +22,13 @@ const Navbar = ({ onOpen }) => {
   return (
     <NavbarStyled ref={navbarRef}>
       <Wrapper>
-        <Logo>Ludmila Nieczyporuk</Logo>
+        <Logo
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
+        >
+          Ludmila Nieczyporuk
+        </Logo>
         <Button onClick={onOpen}>
           <Menu title="Menu icon" height="25px" />
         </Button>

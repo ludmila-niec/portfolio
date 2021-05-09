@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { Container, Wrapper, MenuList, Link, Button } from "./styled";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close-icon.svg";
 // animation
-import { showMenuLinks } from "../../animation/menu";
+import { showMenuLinks, hideMenuLinks } from "../../animation/menu";
 
 const Menu = ({ menuItems, isOpen, onClose }) => {
   const menuRef = useRef(null);
   const linkRef = useRef(null);
 
   useEffect(() => {
-    showMenuLinks(".menu-link");
+    showMenuLinks(".menu__link");
   }, []);
 
   useEffect(() => {
@@ -19,24 +19,41 @@ const Menu = ({ menuItems, isOpen, onClose }) => {
     }
   }, [isOpen]);
 
+  // redirect after de animation has ended
+  function handleRedirect(e, link) {
+    e.preventDefault();
+    const element = document.querySelector(link);
+    setTimeout(() => {
+      element.scrollIntoView();
+    }, 1200);
+  }
+
   const menuLinks = menuItems.map((item) => {
     const { title, link } = item;
     return (
-      <li ref={linkRef} className="menu-link" key={title}>
-        <Link href={link}>{title}</Link>
+      <li ref={linkRef} className="menu__link" key={title}>
+        <Link onClick={(e) => handleRedirect(e, link)} href={link}>
+          {title}
+        </Link>
       </li>
     );
   });
 
+  function handleCloseMenu() {
+    setTimeout(() => {
+      onClose();
+    }, 1200);
+    hideMenuLinks(".menu__link");
+  }
 
   return (
     <Container ref={menuRef}>
       <Wrapper>
-        <Button onClick={onClose}>
+        <Button onClick={handleCloseMenu}>
           <CloseIcon height="25px" width="25px" />
           CLOSE
         </Button>
-        <MenuList onClick={onClose}>{menuLinks}</MenuList>
+        <MenuList onClick={handleCloseMenu}>{menuLinks}</MenuList>
       </Wrapper>
     </Container>
   );
