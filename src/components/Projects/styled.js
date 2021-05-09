@@ -66,44 +66,44 @@ export const Wrapper = styled.div`
   & > svg {
     height: 200px;
     position: relative;
-    bottom: 120px;
-    left: 50px;
-    /* z-index: 1; */
+    bottom: 30px;
+    left: 100px;
     overflow: visible;
   }
   & #circle-flip {
     transform: scaleX(-1);
-    left: -50px;
-    right: 50px;
+    left: -100px;
   }
 
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     & > #circle-flip {
       height: 250px;
       width: 100%;
-      left: -200px;
-      bottom: 150px;
+      left: -275px;
     }
     & > svg {
-      left: 182px;
+      left: 275px;
       height: 280px;
       width: 100%;
     }
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
     & > #circle-flip {
-      left: -300px;
+      left: -400px;
       height: 320px;
-      bottom: 80px;
     }
     & > svg {
       height: 350px;
-      left: 250px;
+      left: 375px;
     }
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    & > div:nth-child(3) {
-      flex-direction: row-reverse;
+    & > #circle-flip {
+      left: -575px;
+    }
+    & > svg {
+      left: 555px;
+      bottom:75px;
     }
   }
 `;

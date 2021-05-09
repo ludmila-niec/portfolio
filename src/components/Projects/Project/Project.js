@@ -12,7 +12,7 @@ import { ReactComponent as Github } from "../../../assets/icons/github-icon.svg"
 import { ReactComponent as Website } from "../../../assets/icons/website-icon.svg";
 
 const Project = ({ project, images }) => {
-  const { title, description, stack } = project;
+  const { title, description, stack, repository, website } = project;
   return (
     <Container className="project__container">
       <ImageWrapper className="project__image">
@@ -20,12 +20,12 @@ const Project = ({ project, images }) => {
           <source
             type="image/webp"
             srcSet={images.large.webp}
-            media="(min-width:1200px)"
+            media="(min-width:1000px)"
           />
           <source
             type="image/jpeg"
             srcSet={images.large.jpg}
-            media="(min-width:1200px)"
+            media="(min-width:1000px)"
           />
           <source type="image/jpeg" srcSet={images.small.webp} />
           <source type="image/jpeg" srcSet={images.small.jpg} />
@@ -35,7 +35,8 @@ const Project = ({ project, images }) => {
             alt={title}
             loading="lazy"
             className="project__image-demo"
-            width="750" height="500" 
+            width="750"
+            height="500"
           />
         </picture>
         <Shadow />
@@ -46,14 +47,17 @@ const Project = ({ project, images }) => {
             <h3 className="project__title">{title}</h3>
             <p className="project__description">{description}</p>
           </WrapperTitle>
-          <WrapperSocial>
-            <Github />
-            <Website />
-          </WrapperSocial>
         </div>
         <WrapperStack>
-          <h4 className="project__stack-title">Tech Stack</h4>
           <p className="project__stack-list">{stack}</p>
+          <WrapperSocial>
+            <a href={repository} rel="noreferrer noopener" target="_blank">
+              <Github />
+            </a>
+            <a href={website} rel="noreferrer noopener" target="_blank">
+              <Website />
+            </a>
+          </WrapperSocial>
         </WrapperStack>
       </Wrapper>
     </Container>
