@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
-import { Container, Wrapper, Title, LinkWrapper } from "./styled";
+import {
+  Container,
+  Wrapper,
+  Title,
+  LinkWrapper,
+  CopyrightWrapper,
+} from "./styled";
 // animation
 import { showLinks } from "../../animation/contact";
 const Contact = () => {
   useEffect(() => {
     showLinks(".link__label", "#contact-link");
   }, []);
+
+  const year = new Date().getFullYear();
   return (
-    <section id="contact-link">
+    <footer id="contact-link">
       <Container>
         <Wrapper>
           <Title>Let's Talk!</Title>
@@ -39,8 +47,11 @@ const Contact = () => {
             </a>
           </LinkWrapper>
         </Wrapper>
+        <CopyrightWrapper>
+          <p> &copy;{year} - All rights reserved - Ludmila Nieczyporuk</p>
+        </CopyrightWrapper>
       </Container>
-    </section>
+    </footer>
   );
 };
 

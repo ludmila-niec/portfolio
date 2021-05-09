@@ -5,6 +5,9 @@ export const Container = styled.div`
   position: relative;
   z-index: 2;
   background-color: ${({ theme }) => theme.palette.colorOffWhite};
+  @media ${({theme}) => theme.mediaQuery.mediaLg}{
+    height: 100vh;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -62,9 +65,23 @@ export const LinkWrapper = styled.div`
       font-size: 3.5rem;
     }
   }
-  @media ${({theme}) => theme.mediaQuery.mediaLg}{
+  @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     flex-direction: row;
     justify-content: space-between;
-    padding:2rem;
+    padding: 2rem;
+  }
+`;
+
+export const CopyrightWrapper = styled.div`
+  background-color: ${({ theme }) => theme.palette.colorMain};
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  & > p {
+    color: ${({ theme }) => theme.palette.colorSecondary};
+    padding: 1rem;
+    font-size: 0.8rem;
   }
 `;
