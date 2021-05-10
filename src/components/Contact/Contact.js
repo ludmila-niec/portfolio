@@ -8,7 +8,8 @@ import {
 } from "./styled";
 // animation
 import { showLinks } from "../../animation/contact";
-const Contact = () => {
+const Contact = ({ data }) => {
+  const { title, accesibility } = data;
   useEffect(() => {
     showLinks(".link__label", "#contact-link");
   }, []);
@@ -18,12 +19,12 @@ const Contact = () => {
     <footer id="contact-link">
       <Container>
         <Wrapper>
-          <Title>Let's Talk!</Title>
+          <Title>{title}</Title>
           <LinkWrapper>
             <a
               className="link__label"
               href="mailto:ludmilanieczy.gmail.com"
-              aria-label="send email yo ludmila"
+              aria-label={accesibility.email}
             >
               /Email
             </a>
@@ -32,7 +33,7 @@ const Contact = () => {
               href="https://github.com/ludmila-niec"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="Go to ludmila's github account"
+              aria-label={accesibility.github}
             >
               /Github
             </a>{" "}
@@ -41,7 +42,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/ludmila-nieczyporuk/"
               rel="noreferrer noopener"
               target="_blank"
-              aria-label="go to ludmila's linkedin"
+              aria-label={accesibility.linkedin}
             >
               /LinkedIn
             </a>

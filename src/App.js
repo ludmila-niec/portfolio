@@ -46,7 +46,6 @@ function App() {
     state: { data },
   } = useLanguage();
   const wrapperRef = useRef(null);
-  const menuContainerRef = useRef(null);
 
   function handleOpenMenu() {
     setMenuIsOpen(true);
@@ -75,14 +74,14 @@ function App() {
       )}
       {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       <header className="App-header">
-        <Navbar onOpen={handleOpenMenu} />
+        <Navbar onOpen={handleOpenMenu} data={data.navbar} />
       </header>
       <main style={{ overflowX: "hidden" }}>
         <Intro data={data.intro} />
         <About data={data.about} />
         <Projects data={data.projects} />
         <Skills />
-        <Contact />
+        <Contact data={data.contact} />
       </main>
     </Wrapper>
   );

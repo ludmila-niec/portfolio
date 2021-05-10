@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { ReactComponent as Menu } from "../../assets/icons/menu.svg";
 import { NavbarStyled, Wrapper, Logo, Button } from "./styled";
 
-const Navbar = ({ onOpen }) => {
+const Navbar = ({ onOpen, data }) => {
+  const { accesibility } = data;
   const navbarRef = useRef(null);
   let prevpageOffsetY = useRef(0);
   let currentPageoffsetY = useRef(0);
@@ -23,13 +24,15 @@ const Navbar = ({ onOpen }) => {
     <NavbarStyled ref={navbarRef}>
       <Wrapper>
         <Logo
+          role="button"
+          aria-label={accesibility.logoBtn}
           onClick={() =>
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
           }
         >
           Ludmila Nieczyporuk
         </Logo>
-        <Button onClick={onOpen}>
+        <Button aria-label={accesibility.menuBtn} onClick={onOpen}>
           <Menu title="Menu icon" height="25px" />
         </Button>
       </Wrapper>

@@ -29,10 +29,14 @@ const Menu = ({ menuItems, isOpen, onClose }) => {
   }
 
   const menuLinks = menuItems.map((item) => {
-    const { title, link } = item;
+    const { title, link, accesibility } = item;
     return (
       <li ref={linkRef} className="menu__link" key={title}>
-        <Link onClick={(e) => handleRedirect(e, link)} href={link}>
+        <Link
+          aria-label={accesibility}
+          onClick={(e) => handleRedirect(e, link)}
+          href={link}
+        >
           {title}
         </Link>
       </li>
@@ -49,8 +53,8 @@ const Menu = ({ menuItems, isOpen, onClose }) => {
   return (
     <Container ref={menuRef}>
       <Wrapper>
-        <Button onClick={handleCloseMenu}>
-          <CloseIcon height="25px" width="25px" />
+        <Button aria-label="close menu" onClick={handleCloseMenu}>
+          <CloseIcon height="25px" width="25px" aria-hidden="true" />
           CLOSE
         </Button>
         <MenuList onClick={handleCloseMenu}>{menuLinks}</MenuList>

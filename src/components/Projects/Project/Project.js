@@ -51,10 +51,20 @@ const Project = ({ project, images }) => {
         <WrapperStack>
           <p className="project__stack-list">{stack}</p>
           <WrapperSocial>
-            <a href={repository} rel="noreferrer noopener" target="_blank">
+            <a
+              href={repository.link}
+              aria-label={repository.accesibility}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
               <Github />
             </a>
-            <a href={website} rel="noreferrer noopener" target="_blank">
+            <a
+              href={website.link}
+              aria-label={website.accesibility}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
               <Website />
             </a>
           </WrapperSocial>
