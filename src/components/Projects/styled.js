@@ -15,12 +15,12 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.palette.colorSecondary};
-  font-size: 2.3rem;
+  font-size: 2rem;
   position: relative;
   z-index: 5;
 
   & > .projects__subtitle-bigger {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     position: relative;
     right: -80px;
   }

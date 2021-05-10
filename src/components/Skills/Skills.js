@@ -11,7 +11,7 @@ import DividerCurve from "../Divider";
 // animation
 import { animateSkills } from "../../animation/skills";
 
-const Skills = () => {
+const Skills = ({ data }) => {
   useEffect(() => {
     animateSkills(
       "#skills-link",
@@ -25,23 +25,24 @@ const Skills = () => {
       <Container>
         <Wrapper>
           <Title className="skills__title">
-            Skills<span className="skills__title-dot">.</span>
+            {data.title}
+            <span className="skills__title-dot">.</span>
           </Title>
           <SkillsWrapper>
             <SkillContent className="skills__front-end">
               <h3>Front End</h3>
               <p>
                 HTML - CSS - SCSS - Bootstrap - Material-ui - Styled-components
-                - GSAP - Javascript - React - Redux -
+                - GSAP - Javascript - React - Redux.
               </p>
             </SkillContent>
             <SkillContent className="skills__back-end">
               <h3>Back End</h3>
-              <p>Node.js - Express.js - MongoDB - SQL - RestfulAPI</p>
+              <p>Node.js - Express.js - MongoDB - SQL - RestfulAPI.</p>
             </SkillContent>
             <SkillContent className="skills__tools">
               <h3>Tools</h3>
-              <p>Visual Studio Code - Git - Github - Photoshop - Figma</p>
+              <p>Visual Studio Code - Git - Github - Photoshop - Figma.</p>
             </SkillContent>
           </SkillsWrapper>
         </Wrapper>

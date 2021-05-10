@@ -1,12 +1,26 @@
 import React, { useEffect, useRef } from "react";
-import { Container, Wrapper, MenuList, Link, Button } from "./styled";
+import {
+  Container,
+  WrapperTop,
+  Wrapper,
+  MenuList,
+  Link,
+  Button,
+} from "./styled";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close-icon.svg";
+// context
+import { useLanguage } from "../../context/Language";
 // animation
 import { showMenuLinks, hideMenuLinks } from "../../animation/menu";
 
-const Menu = ({ menuItems, isOpen, onClose }) => {
+const Menu = ({ isOpen, onClose }) => {
+  const {
+    state: { data, language },
+    action: { changeLanguage },
+  } = useLanguage();
   const menuRef = useRef(null);
   const linkRef = useRef(null);
+  const { menu } = data;
 
   useEffect(() => {
     showMenuLinks(".menu__link");
@@ -28,7 +42,8 @@ const Menu = ({ menuItems, isOpen, onClose }) => {
     }, 1200);
   }
 
-  const menuLinks = menuItems.map((item) => {
+  // map each menu item
+  const menuLinks = menu.map((item) => {
     const { title, link, accesibility } = item;
     return (
       <li ref={linkRef} className="menu__link" key={title}>
@@ -52,11 +67,32 @@ const Menu = ({ menuItems, isOpen, onClose }) => {
 
   return (
     <Container ref={menuRef}>
-      <Wrapper>
-        <Button aria-label="close menu" onClick={handleCloseMenu}>
-          <CloseIcon height="25px" width="25px" aria-hidden="true" />
-          CLOSE
+      <WrapperTop className="btn__wrapper">
+        <Button
+          aria-label="close menu"
+          className="btn__close"
+          onClick={handleCloseMenu}
+        >
+          <CloseIcon height="20px" width="20px" aria-hidden="true" />
+          {/* Close */}
         </Button>
+        <WrapperTop>
+          <Button
+            disabled={language === "EN"}
+            onClick={changeLanguage}
+          >
+            En
+          </Button>
+          <span>/</span>
+          <Button
+            disabled={language === "ES"}
+            onClick={changeLanguage}
+          >
+            Es
+          </Button>
+        </WrapperTop>
+      </WrapperTop>
+      <Wrapper>
         <MenuList onClick={handleCloseMenu}>{menuLinks}</MenuList>
       </Wrapper>
     </Container>

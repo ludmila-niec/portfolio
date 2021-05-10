@@ -16,7 +16,7 @@ export const language = {
         accesibility: "Go to Projects section",
       },
       {
-        title: "Skills",
+        title: "Technologies",
         link: "#skills-link",
         accesibility: "Go to Skills section",
       },
@@ -28,12 +28,12 @@ export const language = {
     ],
     intro: {
       description:
-        "Hi! I’m Ludmila, a front end developer and designer from Argentina.",
+        "Hi! I’m Ludmila, a front end developer and designer from Argentina. I love creating beautiful, creative and functional web apps",
     },
     about: {
-      title: "About Me",
+      title: "About me",
       description:
-        "I'm an Argentinian based web developer and designer. I used to work as a fashion designer, but since 2019 I began my journey as a self taught developer, looking forward to bring all my passion for design and creativity to the digital world. I really enjoy creating beautiful and creative products where motion, interaction and design are perfectly integrated. I always focus on developing the best for the user experience, work on the performance, accesibility and take care for the details.",
+        "I'm a web developer, passionate about front end, and a fashion designer living in Buenos Aires. Since 2019 I began my journey as a self taught developer, looking forward to bring all my passion for design and creativity to the digital world. In 2020, I continued my studies taking the Acamica's Full Stack Web development course. With everything I learnt, I was able to obtain new skills and began studying React.js on my own. I really enjoy creating beautiful and creative products where motion, interaction and design are perfectly integrated. I always focus on developing the best for the user experience, work on the performance, accesibility and take care for the details.",
     },
     projects: {
       title: "Explore my projects",
@@ -87,7 +87,7 @@ export const language = {
       ],
     },
     skills: {
-      title: "Skills",
+      title: "Technologies",
       categories: ["Front end", "Back end", "Tools"],
     },
     contact: {
@@ -128,12 +128,12 @@ export const language = {
     ],
     intro: {
       description:
-        "Hola! Soy Ludmila, desarrolladora front end y diseñadora de Argentina",
+        "Hola! Soy Ludmila, desarrolladora front end y diseñadora de Argentina. me encanta crear aplicaciones web estéticas, creativas y funcionales",
     },
     about: {
-      title: "Sobre Mi",
+      title: "Sobre mi",
       description:
-        "Soy una desarrolladora web y diseñadora viviendo en Argentina. Por muchos años me desempeñé como diseñadora de indumentaria, pero desde el 2019 empecé a formarme como desarrolladora web de manera autodidacta, buscando llevar toda mi pasión por el diseño y la creatividad al mundo digital. Me encanta crear productos estéticos y creativos, donde las transiciones, interacciones y diseño se integran perfectamente. Siempre me concentro en desarrollar lo mejor para la experiencia de usuario, trabajo en la performance, accesibilidad y hago foco en los detalles.",
+        "Soy una desarrolladora web, apasionada por el front end y diseñadora de indumentaria viviendo en Buenos Aires, Argentina. Desde el 2019 empecé a formarme como desarrolladora web de manera autodidacta, buscando llevar toda mi pasión por el diseño y la creatividad al mundo digital. En el 2020, continué mis estudios tomando el curso de Desarrollo Full Stack de Acamica. Con todo lo aprendido, obtuve nuevas habilidades y conocimientos, que me permitieron empezar a aprender React.js de manera autodidacta.  Me encanta crear productos estéticos y creativos, donde las transiciones, interacciones y diseño se integran perfectamente. Siempre me concentro en desarrollar lo mejor para la experiencia de usuario, trabajo en la performance, accesibilidad y me enfoco en los detalles.",
     },
     projects: {
       title: "Explora mis proyectos",
@@ -191,7 +191,7 @@ export const language = {
       categories: ["Front end", "Back end", "Tools"],
     },
     contact: {
-      title: "Let's talk!",
+      title: "Hablemos!",
       accesibility: {
         email: "Enviar email a ludmila",
         github: "Ir al perfil de Github de Ludmila",

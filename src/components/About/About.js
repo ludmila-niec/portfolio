@@ -12,7 +12,7 @@ import {
 // x1 images
 import profile_x1_jpg from "../../assets/Images/x1/portfolio-picture-x1.jpg";
 import profile_x1_webp from "../../assets/Images/x1/portfolio-picture-x1.webp";
-//x2 images 
+//x2 images
 import profile_x2_jpg from "../../assets/Images/x2/portfolio-picture-x2.jpg";
 import profile_x2_webp from "../../assets/Images/x2/portfolio-picture-x2.webp";
 // animation
@@ -23,16 +23,21 @@ const profileImage = {
   large: { jpg: profile_x2_jpg, webp: profile_x2_webp },
 };
 
-const About = ({ data }) => {
+const About = ({ data, language }) => {
+  const { title, description } = data;
   const aboutDeco = useRef(null);
 
   useEffect(() => {
     aboutDeco.current.innerText = "";
     let counter = 8;
+    let content = "";
     for (let i = 0; i < counter; i++) {
-      aboutDeco.current.innerText += "  About me  *  ";
+      content += `<span>${title}</span>`;
     }
-  }, []);
+    aboutDeco.current.innerHTML = content;
+  }, [title]);
+
+  const englishLanguage = language === "EN";
 
   // animation
   useEffect(() => {
@@ -48,13 +53,16 @@ const About = ({ data }) => {
   return (
     <section>
       <BorderTitle className="border__container">
-        <AboutStyled ref={aboutDeco}>About me</AboutStyled>
+        <AboutStyled ref={aboutDeco}>{title}</AboutStyled>
       </BorderTitle>
       <Container className="about__container">
         <Wrapper id="about-me-link">
           <div className="about__picture">
             <TitleSection className="about__title">
-              About <span className="about__subtitle-me">me</span>
+              {englishLanguage ? "About " : "Sobre "}
+              <span className="about__subtitle-me">
+                {englishLanguage ? "me" : "mi"}
+              </span>
             </TitleSection>
             <ImageWrapper>
               <picture>
@@ -75,13 +83,14 @@ const About = ({ data }) => {
                   src={profileImage.small.jpg}
                   alt="profile"
                   loading="lazy"
-                  height="640" width="360" 
+                  height="640"
+                  width="360"
                 />
               </picture>
             </ImageWrapper>
           </div>
           <div className="about__description">
-            <Paragraph>{data.description}</Paragraph>
+            <Paragraph>{description}</Paragraph>
           </div>
         </Wrapper>
       </Container>

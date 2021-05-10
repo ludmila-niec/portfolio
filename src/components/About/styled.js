@@ -13,6 +13,10 @@ export const AboutStyled = styled.div`
   width: max-content;
   text-overflow: clip;
   white-space: nowrap;
+  display:flex;
+  & > span{
+    margin-right: 50px;
+  }
 
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
     font-size: 2rem;
@@ -20,7 +24,7 @@ export const AboutStyled = styled.div`
 `;
 
 export const Container = styled.div`
-  height: 190vh;
+  height: 230vh;
   padding: 2rem;
   background-color: ${({ theme }) => theme.palette.colorSecondary};
   display: flex;
@@ -28,36 +32,21 @@ export const Container = styled.div`
   align-items: center;
 
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
-    height: 130vh;
+    height: 150vh;
     padding: 3rem;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
-    height: 120vh;
+    height: 130vh;
     padding: 4rem;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    height: 180vh;
+    height: 230vh;
   }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-
-  @media ${({ theme }) => theme.mediaQuery.mediaMd} {
-    flex-direction: row;
-    height: 75%;
-
-    & > div {
-      flex: 1;
-    }
-    & > .about__picture {
-      align-self: flex-start;
-    }
-    & > .about__description {
-      align-self: flex-end;
-    }
-  }
 
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     width: 80%;

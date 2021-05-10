@@ -36,7 +36,7 @@ const redeemImg = {
   large: { jpg: redeem_x2_jpg, webp: redeem_x2_webp },
 };
 
-const Projects = ({ data }) => {
+const Projects = ({ data, language }) => {
   useEffect(() => {
     animateTitle(
       ".projects__title",
@@ -50,13 +50,18 @@ const Projects = ({ data }) => {
     animateDivider(".divider__projects");
   }, []);
 
+  const englishLanguage = language === "EN";
+
   const { projects } = data;
   return (
     <section id="projects-link">
       <Container>
         <Title className="projects__title">
-          Explore my
-          <br /> <span className="projects__subtitle-bigger">projects.</span>
+          {englishLanguage ? "Explore my" : "Explora mis"}
+          <br />{" "}
+          <span className="projects__subtitle-bigger">
+            {englishLanguage ? "projects." : "proyectos."}
+          </span>
           <div className="projects__subtitle-line"></div>
         </Title>
         <Wrapper>

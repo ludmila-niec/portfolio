@@ -43,7 +43,7 @@ const Backdrop = styled.div`
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const {
-    state: { data },
+    state: { data, language },
   } = useLanguage();
   const wrapperRef = useRef(null);
 
@@ -68,7 +68,6 @@ function App() {
       {menuIsOpen && (
         <Menu
           isOpen={menuIsOpen}
-          menuItems={data.menu}
           onClose={handleCloseMenu}
         />
       )}
@@ -77,10 +76,10 @@ function App() {
         <Navbar onOpen={handleOpenMenu} data={data.navbar} />
       </header>
       <main style={{ overflowX: "hidden" }}>
-        <Intro data={data.intro} />
-        <About data={data.about} />
-        <Projects data={data.projects} />
-        <Skills />
+        <Intro language={language} />
+        <About data={data.about} language={language} />
+        <Projects data={data.projects} language={language} />
+        <Skills data={data.skills} />
         <Contact data={data.contact} />
       </main>
     </Wrapper>

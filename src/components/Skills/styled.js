@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.palette.colorMain};
-  font-size: 2.5rem;
+  font-size: 2rem;
   & .skills__title-dot {
     color: ${({ theme }) => theme.palette.colorAccent};
   }
