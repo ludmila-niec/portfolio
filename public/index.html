@@ -2,24 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#dcd1ef" />
+    <!-- browser -->
+    <title>Ludmila's Portfolio - Front end Developer</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Ludmila Nieczyporuk's front end developer portfolio. React.js developer"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!-- <link rel="preload" href="https://fonts.gstatic.com" />
+    <meta name="author" content="Ludmila Nieczyporuk" />
+    <meta name="geo.placement" content="Buenos Aires" />
+    <meta name="geo.region" content="AR" />
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ludmila Nieczyporuk's portfolio" />
+    <meta
+      property="og:title"
+      content="Ludmila's Portfolio - Front end Developer"
+    />
+    <meta
+      property="og:description"
+      content="Ludmila Nieczyporuk's front end developer portfolio. React.js developer"
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/meta/facebook-meta.webp" />
+    <meta property="og:url" content="https://ludmila-niecz.vercel.app" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@luniec" />
+    <meta property="twitter:title" content="Ludmila Nieczyporuk's portfolio" />
+    <meta
+      property="twitter:description"
+      content="Ludmila Nieczyporuk's front end developer portfolio. React.js developer"
+    />
+    <meta
+      property="twitter:image"
+      content="%PUBLIC_URL%/meta/twitter-card-meta.webp"
+    />
+    <meta
+       property="twitter:url"
+       content="https://ludmila-niecz.vercel.app" 
+     />
+    <!-- icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Krona+One&family=Ubuntu&display=swap"
-      rel="stylesheet"
-    /> -->
+      rel="shortcut icon"
+      type="image/ico"
+      href="%PUBLIC_URL%/meta/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/meta/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/meta/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/meta/favicon-16x16.png"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/meta/site.webmanifest" />
+    <!-- resources -->
     <link
       rel="preload"
       href="https://fonts.gstatic.com/s/kronaone/v9/jAnEgHdjHcjgfIb1ZcUyNoWg_8a0Ww.woff2"
@@ -32,7 +79,7 @@
       as="font"
       crossorigin="anonymous"
     />
-    <title>Ludmila's Portfolio</title>
+
     <style>
       body {
         background-color: #dcd1ef;
@@ -68,7 +115,7 @@
       }
 
       @media screen and (min-width: 600px) {
-        .intro__container{
+        .intro__container {
           height: 120vh;
         }
         .intro__wrapper {
