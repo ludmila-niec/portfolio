@@ -81,4 +81,4 @@ const Projects = ({ data, language }) => {
   );
 };
 
-export default Projects;
+export default React.memo(Projects);

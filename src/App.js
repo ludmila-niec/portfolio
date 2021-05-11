@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import Intro from "./components/Intro/Intro";
@@ -47,17 +47,17 @@ function App() {
   } = useLanguage();
   const wrapperRef = useRef(null);
 
-  function handleOpenMenu() {
+  const handleOpenMenu = useCallback(() => {
     setMenuIsOpen(true);
     wrapperRef.current.classList.add("body__backdrop");
     document.querySelector("html").style.overflow = "hidden";
-  }
+  }, []);
 
-  function handleCloseMenu() {
+  const handleCloseMenu = useCallback(() => {
     setMenuIsOpen(false);
     wrapperRef.current.classList.remove("body__backdrop");
     document.querySelector("html").style.overflow = "visible";
-  }
+  }, []);
 
   function handleClickOutside() {
     handleCloseMenu();
@@ -65,12 +65,7 @@ function App() {
 
   return (
     <Wrapper ref={wrapperRef}>
-      {menuIsOpen && (
-        <Menu
-          isOpen={menuIsOpen}
-          onClose={handleCloseMenu}
-        />
-      )}
+      {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
       {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       <header className="App-header">
         <Navbar onOpen={handleOpenMenu} data={data.navbar} />

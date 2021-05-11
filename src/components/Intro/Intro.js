@@ -36,11 +36,10 @@ const Intro = ({ language }) => {
       style={{ position: "relative" }}
     >
       <Circles className="intro__circles" />
-      <div className="intro__wrapper">
-        {description}
-      </div>
+      <div className="intro__wrapper">{description}</div>
     </section>
   );
 };
 
-export default Intro;
+export default React.memo(Intro);
+// export default Intro;

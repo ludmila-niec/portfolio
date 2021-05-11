@@ -99,4 +99,4 @@ const About = ({ data, language }) => {
   );
 };
 
-export default About;
+export default React.memo(About);

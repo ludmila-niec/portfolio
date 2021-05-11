@@ -1,12 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import {
-  Container,
-  WrapperTop,
-  Wrapper,
-  MenuList,
-  Link,
-  Button,
-} from "./styled";
+import React, { useEffect, useRef, useCallback } from "react";
+import MenuLinks from "./MenuLinks";
+import { Container, WrapperTop, Wrapper, Button } from "./styled";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close-icon.svg";
 // context
 import { useLanguage } from "../../context/Language";
@@ -19,8 +13,6 @@ const Menu = ({ isOpen, onClose }) => {
     action: { changeLanguage },
   } = useLanguage();
   const menuRef = useRef(null);
-  const linkRef = useRef(null);
-  const { menu } = data;
 
   useEffect(() => {
     showMenuLinks(".menu__link");
@@ -32,31 +24,6 @@ const Menu = ({ isOpen, onClose }) => {
       menuRef.current.style.top = window.pageYOffset + "px";
     }
   }, [isOpen]);
-
-  // redirect after de animation has ended
-  function handleRedirect(e, link) {
-    e.preventDefault();
-    const element = document.querySelector(link);
-    setTimeout(() => {
-      element.scrollIntoView();
-    }, 1200);
-  }
-
-  // map each menu item
-  const menuLinks = menu.map((item) => {
-    const { title, link, accesibility } = item;
-    return (
-      <li ref={linkRef} className="menu__link" key={title}>
-        <Link
-          aria-label={accesibility}
-          onClick={(e) => handleRedirect(e, link)}
-          href={link}
-        >
-          {title}
-        </Link>
-      </li>
-    );
-  });
 
   function handleCloseMenu() {
     setTimeout(() => {
@@ -74,26 +41,19 @@ const Menu = ({ isOpen, onClose }) => {
           onClick={handleCloseMenu}
         >
           <CloseIcon height="20px" width="20px" aria-hidden="true" />
-          {/* Close */}
         </Button>
         <WrapperTop>
-          <Button
-            disabled={language === "EN"}
-            onClick={changeLanguage}
-          >
+          <Button disabled={language === "EN"} onClick={changeLanguage}>
             En
           </Button>
           <span>/</span>
-          <Button
-            disabled={language === "ES"}
-            onClick={changeLanguage}
-          >
+          <Button disabled={language === "ES"} onClick={changeLanguage}>
             Es
           </Button>
         </WrapperTop>
       </WrapperTop>
       <Wrapper>
-        <MenuList onClick={handleCloseMenu}>{menuLinks}</MenuList>
+        <MenuLinks onClose={handleCloseMenu} menuList={data.menu} />
       </Wrapper>
     </Container>
   );
