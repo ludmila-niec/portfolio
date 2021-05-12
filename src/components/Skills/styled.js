@@ -6,13 +6,13 @@ export const Section = styled.section`
   z-index: 2;
   overflow: hidden;
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
-    height: 100vh;
+    min-height: 100vh;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
-    height: 90vh;
+    min-height: 90vh;
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    height: 120vh;
+    min-height: 120vh;
   }
 `;
 

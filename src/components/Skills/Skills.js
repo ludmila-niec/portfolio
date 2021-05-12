@@ -7,7 +7,6 @@ import {
   SkillsWrapper,
   SkillContent,
 } from "./styled";
-import DividerCurve from "../Divider";
 // animation
 import { animateSkills } from "../../animation/skills";
 
@@ -33,7 +32,7 @@ const Skills = ({ data }) => {
               <h3>Front End</h3>
               <p>
                 HTML - CSS - SCSS - Bootstrap - Material-ui - Styled-components
-                - GSAP - Javascript - React - Redux.
+                - GSAP - Javascript - React - Redux - npm - Webpack.
               </p>
             </SkillContent>
             <SkillContent className="skills__back-end">
@@ -47,7 +46,6 @@ const Skills = ({ data }) => {
           </SkillsWrapper>
         </Wrapper>
       </Container>
-      <DividerCurve fill="#F4F4F4" className="divider__skills" />
     </Section>
   );
 };

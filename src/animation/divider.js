@@ -10,7 +10,7 @@ export function animateDivider(divider) {
       end: "+=500px",
       scrub: 1,
     },
-    y: 30,
+    y: 35,
   });
 }
 

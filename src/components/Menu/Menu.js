@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import MenuLinks from "./MenuLinks";
 import { Container, WrapperTop, Wrapper, Button } from "./styled";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close-icon.svg";

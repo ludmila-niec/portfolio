@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import DividerCurve from "../Divider";
 import {
   Container,
   Wrapper,
@@ -18,6 +19,7 @@ const Contact = ({ data }) => {
   return (
     <footer id="contact-link">
       <Container>
+      <DividerCurve fill="#F4F4F4" className="divider__contact" />
         <Wrapper>
           <Title>{title}</Title>
           <LinkWrapper>

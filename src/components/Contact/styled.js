@@ -1,19 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   position: relative;
   z-index: 2;
   background-color: ${({ theme }) => theme.palette.colorOffWhite};
-  @media ${({theme}) => theme.mediaQuery.mediaLg}{
-    height: 100vh;
+  overflow-x: clip;
+  @media ${({ theme }) => theme.mediaQuery.mediaLg} {
+    min-height: 100vh;
   }
 `;
 
 export const Wrapper = styled.div`
-  padding: 2rem;
-  position: relative;
-  top: 100px;
+  padding: 0 2rem;
+  @media ${({ theme }) => theme.mediaQuery.mediaLg} {
+    padding: 0 6rem;
+    position: relative;
+    bottom: 100px;
+  }
 `;
 
 export const Title = styled.h2`

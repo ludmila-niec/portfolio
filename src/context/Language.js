@@ -16,10 +16,7 @@ const LanguageProvider = ({ children }) => {
       setLanguage(LANGUAGE.ENGLISH);
       setData(content.english);
     }
-    // setLanguage((prevLanguage) => {
-    //   if (prevLanguage === LANGUAGE.ENGLISH) return LANGUAGE.SPANISH;
-    //   return LANGUAGE.ENGLISH;
-    // });
+
   }
   const state = { language, data };
   const action = { changeLanguage: handleChangeLanguage };

@@ -133,7 +133,7 @@ export const language = {
     about: {
       title: "Sobre mi",
       description:
-        "Soy una desarrolladora web, apasionada por el front end y diseñadora de indumentaria viviendo en Buenos Aires, Argentina. Desde el 2019 empecé a formarme como desarrolladora web de manera autodidacta, buscando llevar toda mi pasión por el diseño y la creatividad al mundo digital. En el 2020, continué mis estudios tomando el curso de Desarrollo Full Stack de Acamica. Con todo lo aprendido, obtuve nuevas habilidades y conocimientos, que me permitieron empezar a aprender React.js de manera autodidacta.  Me encanta crear productos estéticos y creativos, donde las transiciones, interacciones y diseño se integran perfectamente. Siempre me concentro en desarrollar lo mejor para la experiencia de usuario, trabajo en la performance, accesibilidad y me enfoco en los detalles.",
+        "Soy una desarrolladora web, apasionada por el front end y diseñadora de indumentaria viviendo en Buenos Aires, Argentina. Desde el 2019 empecé a formarme como desarrolladora web de manera autodidacta, buscando llevar toda mi pasión por el diseño y la creatividad al mundo digital. En el 2020, continué mis estudios tomando el curso de Desarrollo Full Stack de Acamica. Con todo lo aprendido, obtuve nuevas habilidades y conocimientos, que me permitieron empezar a aprender React.js de manera autodidacta.  Me encanta crear productos estéticos y creativos, donde las transiciones, interacciones y diseño se integran perfectamente. Siempre me concentro en desarrollar lo mejor para la experiencia del usuario, trabajo en la performance, accesibilidad y me enfoco en los detalles.",
     },
     projects: {
       title: "Explora mis proyectos",
