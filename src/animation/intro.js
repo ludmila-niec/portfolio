@@ -21,7 +21,7 @@ function slideCircle(elem) {
 
 export function animateIntro(heading, circle) {
   const tl = gsap.timeline();
-  tl.add(slideIntro(heading));
+  tl.add(slideIntro(heading), 1.2);
   tl.add(slideCircle(circle), "-=1.5");
 }
 

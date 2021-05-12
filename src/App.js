@@ -4,9 +4,10 @@ import Navbar from "./components/Navbar";
 import Intro from "./components/Intro/Intro";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import { useLanguage } from "./context/Language";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact/Contact";
+import Loading from "./components/Loading";
+import { useLanguage } from "./context/Language";
 
 import styled from "styled-components";
 
@@ -65,10 +66,11 @@ function App() {
 
   return (
     <Wrapper ref={wrapperRef}>
-      {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
-      {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
+      <Loading />
       <header className="App-header">
         <Navbar onOpen={handleOpenMenu} data={data.navbar} />
+        {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
+        {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       </header>
       <main style={{ overflowX: "hidden" }}>
         <Intro language={language} />

@@ -38,10 +38,7 @@
       property="twitter:image"
       content="%PUBLIC_URL%/meta/twitter-card-meta.webp"
     />
-    <meta
-       property="twitter:url"
-       content="https://ludmila-niecz.vercel.app" 
-     />
+    <meta property="twitter:url" content="https://ludmila-niecz.vercel.app" />
     <!-- icons -->
     <link
       rel="shortcut icon"
@@ -90,6 +87,36 @@
         font-family: "Ubuntu", Arial, Helvetica, sans-serif;
         line-height: 35px;
       }
+
+      /* LOADING CONTAINER */
+      .loading__container {
+        position: absolute;
+        z-index: 500;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background-color: #dcd1ef;
+      }
+      .loading__container--blue{
+        background-color: #2d325b;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .loading__container--yellow{
+        background-color: #c1ff3f;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      /* FCP */
       .intro__container {
         height: 100vh;
         width: 100%;
