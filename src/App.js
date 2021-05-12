@@ -1,13 +1,11 @@
 import React, { useState, useRef, useCallback } from "react";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
-import Intro from "./components/Intro/Intro";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact/Contact";
+import Contact from "./components/Contact";
 import Loading from "./components/Loading";
+import Home from "./pages/Home";
 import { useLanguage } from "./context/Language";
+import { Switch, Route } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -44,7 +42,7 @@ const Backdrop = styled.div`
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const {
-    state: { data, language },
+    state: { data },
   } = useLanguage();
   const wrapperRef = useRef(null);
 
@@ -73,12 +71,11 @@ function App() {
         {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       </header>
       <main style={{ overflowX: "hidden" }}>
-        <Intro language={language} />
-        <About data={data.about} language={language} />
-        <Projects data={data.projects} language={language} />
-        <Skills data={data.skills} />
-        <Contact data={data.contact} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
       </main>
+      <Contact data={data.contact} />
     </Wrapper>
   );
 }
