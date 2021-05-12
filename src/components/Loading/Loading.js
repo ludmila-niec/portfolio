@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { loadingEffect } from "../../animation/loading";
+import { useLocation } from "react-router-dom";
 
 const Loading = () => {
+  const { path } = useLocation();
   useEffect(() => {
     setTimeout(() => {
       document.querySelector("html").style.overflow = "visible";
@@ -13,7 +15,7 @@ const Loading = () => {
       ".loading__container--yellow",
       ".loading__container--blue"
     );
-  }, []);
+  }, [path]);
   return (
     <div className="loading__container">
       <div className="loading__container--blue"></div>

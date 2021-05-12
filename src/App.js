@@ -1,13 +1,14 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, Suspense, lazy } from "react";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import Loading from "./components/Loading";
-import Home from "./pages/Home";
 import { useLanguage } from "./context/Language";
 import { Switch, Route } from "react-router-dom";
-
 import styled from "styled-components";
+
+// lazy loading
+const Home = lazy(() => import("./pages/Home"));
 
 const Wrapper = styled.div`
   height: 100%;
@@ -38,6 +39,12 @@ const Backdrop = styled.div`
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 `;
+
+const Fallback  = styled.div`
+height:100vh;
+width:100%;
+background-color: ${({theme}) => theme.palette.colorSecondary};
+`
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -71,9 +78,11 @@ function App() {
         {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
       </header>
       <main style={{ overflowX: "hidden" }}>
-        <Switch>
-          <Route path="/" exact component={Home} />
-        </Switch>
+        <Suspense fallback={<Fallback />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Suspense>
       </main>
       <Contact data={data.contact} />
     </Wrapper>
