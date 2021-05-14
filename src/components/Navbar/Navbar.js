@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ReactComponent as Menu } from "../../assets/icons/menu.svg";
-import { NavbarStyled, Wrapper, Logo, Button } from "./styled";
+import { NavbarStyled, Wrapper, Logo } from "./styled";
 
 const Navbar = ({ onOpen, data }) => {
   const { accesibility } = data;
@@ -32,9 +32,14 @@ const Navbar = ({ onOpen, data }) => {
         >
           Ludmila Nieczyporuk
         </Logo>
-        <Button aria-label={accesibility.menuBtn} onClick={onOpen}>
-          <Menu title="Menu icon" height="25px" />
-        </Button>
+
+        <Menu
+          role="button"
+          aria-label={accesibility.menuBtn}
+          onClick={onOpen}
+          title="Menu icon"
+          height="25px"
+        />
       </Wrapper>
     </NavbarStyled>
   );

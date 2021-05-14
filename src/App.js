@@ -79,7 +79,9 @@ function App() {
       <header className="App-header">
         <Navbar onOpen={handleOpenMenu} data={data.navbar} />
         {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
-        {menuIsOpen && !smallDevice && <Backdrop onClick={handleClickOutside} />}
+        {menuIsOpen && !smallDevice && (
+          <Backdrop onClick={handleClickOutside} />
+        )}
       </header>
       <main style={{ overflowX: "hidden" }}>
         <Suspense fallback={<Fallback />}>

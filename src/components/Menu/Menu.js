@@ -5,7 +5,7 @@ import { ReactComponent as CloseIcon } from "../../assets/icons/close-icon.svg";
 // context
 import { useLanguage } from "../../context/Language";
 // animation
-import { showMenuLinks, hideMenuLinks } from "../../animation/menu";
+import { showMenu, showMenuLinks, hideMenuLinks } from "../../animation/menu";
 
 const Menu = ({ isOpen, onClose }) => {
   const {
@@ -15,6 +15,7 @@ const Menu = ({ isOpen, onClose }) => {
   const menuRef = useRef(null);
 
   useEffect(() => {
+    showMenu(menuRef.current);
     showMenuLinks(".menu__link");
   }, []);
 

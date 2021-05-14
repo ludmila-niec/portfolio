@@ -1,8 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const slideMenu = keyframes`
-from{transform: translateX(100%)}
-`;
+import styled from "styled-components";
 
 export const Container = styled.div`
   position: fixed;
@@ -18,7 +14,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  animation: ${slideMenu} 0.8s ease-in-out;
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     width: 450px;
   }
