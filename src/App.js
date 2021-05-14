@@ -40,11 +40,11 @@ const Backdrop = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const Fallback  = styled.div`
-height:100vh;
-width:100%;
-background-color: ${({theme}) => theme.palette.colorSecondary};
-`
+const Fallback = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: ${({ theme }) => theme.palette.colorSecondary};
+`;
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -53,17 +53,21 @@ function App() {
   } = useLanguage();
   const wrapperRef = useRef(null);
 
+  const smallDevice = window.matchMedia("(max-width:599px").matches;
+
   const handleOpenMenu = useCallback(() => {
     setMenuIsOpen(true);
-    wrapperRef.current.classList.add("body__backdrop");
     document.querySelector("html").style.overflow = "hidden";
-  }, []);
+    if (smallDevice) return;
+    wrapperRef.current.classList.add("body__backdrop");
+  }, [smallDevice]);
 
   const handleCloseMenu = useCallback(() => {
     setMenuIsOpen(false);
-    wrapperRef.current.classList.remove("body__backdrop");
     document.querySelector("html").style.overflow = "visible";
-  }, []);
+    if (smallDevice) return;
+    wrapperRef.current.classList.remove("body__backdrop");
+  }, [smallDevice]);
 
   function handleClickOutside() {
     handleCloseMenu();
@@ -75,7 +79,7 @@ function App() {
       <header className="App-header">
         <Navbar onOpen={handleOpenMenu} data={data.navbar} />
         {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
-        {menuIsOpen && <Backdrop onClick={handleClickOutside} />}
+        {menuIsOpen && !smallDevice && <Backdrop onClick={handleClickOutside} />}
       </header>
       <main style={{ overflowX: "hidden" }}>
         <Suspense fallback={<Fallback />}>

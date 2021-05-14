@@ -5,7 +5,6 @@ export const Container = styled.div`
   position: relative;
   z-index: 2;
   background-color: ${({ theme }) => theme.palette.colorOffWhite};
-  overflow-x: clip;
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     min-height: 100vh;
   }
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     padding: 0 6rem;
     position: relative;
-    bottom: 100px;
+    bottom: 150px;
   }
 `;
 

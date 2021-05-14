@@ -14,20 +14,11 @@ export const DividerContainer = styled.div`
   }
   &.divider__contact {
     z-index: 3;
-    width: 110%;
-    transform: translate(-10px, -50px) rotateZ(3deg);
+    transform: translateY(-70%);
   }
   @media ${({ theme }) => theme.mediaQuery.mediaSm} {
     &.divider__about {
       transform: translateY(-180px);
-    }
-    &.divider__contact {
-      transform: translate(-10px, -100px) rotateZ(3deg);
-    }
-  }
-  @media ${({ theme }) => theme.mediaQuery.mediaLg} {
-    &.divider__contact {
-      transform: translate(-10px, -150px) rotateZ(3deg);
     }
   }
 `;
