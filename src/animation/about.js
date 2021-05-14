@@ -24,8 +24,8 @@ export function animateSection(title, img, content, container) {
       scrub: 1,
       snap: {
         snapTo: "labels",
-        duration: { min: 1, max: 3 },
-        delay: 0.5,
+        duration: { min: 0.3, max: 2 },
+        delay: 1,
       },
     },
   });
@@ -37,4 +37,12 @@ export function animateSection(title, img, content, container) {
     .from(content, { opacity: 0, x: 50, duration: 2 }, "-=1");
 }
 
-
+export function slideBackground(background) {
+  gsap.from(background, {
+    scrollTrigger: {
+      trigger: background,
+      start: "top bottom",
+    },
+    xPercent: -100,
+  });
+}

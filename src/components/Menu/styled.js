@@ -11,7 +11,7 @@ export const Container = styled.div`
   right: 0px;
   bottom: 0px;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-color: ${({ theme }) => theme.palette.colorMain};
   display: flex;
   flex-direction: column;

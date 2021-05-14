@@ -16,7 +16,11 @@ import profile_x1_webp from "../../assets/Images/x1/portfolio-picture-x1.webp";
 import profile_x2_jpg from "../../assets/Images/x2/portfolio-picture-x2.jpg";
 import profile_x2_webp from "../../assets/Images/x2/portfolio-picture-x2.webp";
 // animation
-import { slideTitleBorder, animateSection } from "../../animation/about";
+import {
+  slideBackground,
+  slideTitleBorder,
+  animateSection,
+} from "../../animation/about";
 
 const profileImage = {
   small: { jpg: profile_x1_jpg, webp: profile_x1_webp },
@@ -24,7 +28,7 @@ const profileImage = {
 };
 
 const About = ({ data, language }) => {
-  const { title, description } = data;
+  const { title } = data;
   const aboutDeco = useRef(null);
 
   useEffect(() => {
@@ -37,11 +41,10 @@ const About = ({ data, language }) => {
     aboutDeco.current.innerHTML = content;
   }, [title]);
 
-  const englishLanguage = language === "EN";
-
   // animation
   useEffect(() => {
     slideTitleBorder(aboutDeco.current, ".border__container");
+    slideBackground(".about__container");
     animateSection(
       ".about__title",
       ".about__picture",
@@ -49,6 +52,48 @@ const About = ({ data, language }) => {
       ".about__container"
     );
   }, []);
+
+  const englishLanguage = language === "EN";
+  const enDescription = (
+    <>
+      <Paragraph>
+        I'm a web developer, passionate about front end, and a fashion designer
+        living in Buenos Aires, Argentina. Since 2019 I began my journey as a
+        self taught developer, looking forward to bring all my passion for
+        design and creativity to the digital world. In 2020, I continued my
+        studies taking the Acamica's Full Stack Web development course. With
+        everything I learnt, I was able to obtain new skills and began studying
+        React.js on my own.
+      </Paragraph>
+      <Paragraph>
+        I really enjoy creating beautiful and creative products where motion,
+        interaction and design are perfectly integrated. I always focus on
+        developing the best for the user experience, work on the performance,
+        accesibility and take care for the details.
+      </Paragraph>
+    </>
+  );
+
+  const esDescription = (
+    <>
+      <Paragraph>
+        Soy una desarrolladora web, apasionada por el front end y diseñadora de
+        indumentaria viviendo en Buenos Aires, Argentina. Desde el 2019 empecé a
+        formarme como desarrolladora web de manera autodidacta, buscando llevar
+        toda mi pasión por el diseño y la creatividad al mundo digital. En el
+        2020, continué mis estudios tomando el curso de Desarrollo Full Stack de
+        Acamica. Con todo lo aprendido, obtuve nuevas habilidades y
+        conocimientos, que me permitieron empezar a aprender React.js de manera
+        por mi cuenta.
+      </Paragraph>
+      <Paragraph>
+        Me encanta crear productos estéticos y creativos, donde las
+        transiciones, interacciones y diseño se integran perfectamente. Siempre
+        me concentro en desarrollar lo mejor para la experiencia del usuario,
+        trabajo en la performance, accesibilidad y me enfoco en los detalles.
+      </Paragraph>
+    </>
+  );
 
   return (
     <section>
@@ -90,7 +135,7 @@ const About = ({ data, language }) => {
             </ImageWrapper>
           </div>
           <div className="about__description">
-            <Paragraph>{description}</Paragraph>
+            {englishLanguage ? enDescription : esDescription}
           </div>
         </Wrapper>
       </Container>

@@ -73,9 +73,9 @@ export const TitleSection = styled.h2`
     }
   }
   @media ${({ theme }) => theme.mediaQuery.mediaMd} {
-    font-size: 3.8rem;
+    font-size: 6rem;
     & .about__subtitle-me {
-      font-size: 4rem;
+      font-size: 5.5rem;
     }
   }
 `;
@@ -116,7 +116,7 @@ export const Image = styled.img`
 
 export const Paragraph = styled.p`
   color: ${({ theme }) => theme.palette.colorOffWhite};
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   font-size: 1.2rem;
   padding-left: 1rem;
   line-height: 40px;

@@ -12,16 +12,16 @@ import { showLinks } from "../../animation/contact";
 const Contact = ({ data }) => {
   const { title, accesibility } = data;
   useEffect(() => {
-    showLinks(".link__label", "#contact-link");
+    showLinks(".contact__title", ".link__label", "#contact-link");
   }, []);
 
   const year = new Date().getFullYear();
   return (
     <footer id="contact-link">
       <Container>
-      <DividerCurve fill="#F4F4F4" className="divider__contact" />
+        <DividerCurve fill="#F4F4F4" className="divider__contact" />
         <Wrapper>
-          <Title>{title}</Title>
+          <Title className="contact__title">{title}</Title>
           <LinkWrapper>
             <a
               className="link__label"
