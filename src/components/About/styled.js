@@ -13,8 +13,8 @@ export const AboutStyled = styled.div`
   width: max-content;
   text-overflow: clip;
   white-space: nowrap;
-  display:flex;
-  & > span{
+  display: flex;
+  & > span {
     margin-right: 50px;
   }
 
@@ -41,6 +41,9 @@ export const Container = styled.div`
   }
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     height: 230vh;
+  }
+  @media ${({ theme }) => theme.mediaQuery.mediaXl} {
+    min-width: 280vh;
   }
 `;
 

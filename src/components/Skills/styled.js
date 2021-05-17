@@ -14,6 +14,9 @@ export const Section = styled.section`
   @media ${({ theme }) => theme.mediaQuery.mediaLg} {
     min-height: 120vh;
   }
+  @media ${({ theme }) => theme.mediaQuery.mediaXl} {
+    min-height: 200vh;
+  }
 `;
 
 export const Container = styled.div`

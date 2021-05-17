@@ -9,5 +9,6 @@ export const theme = {
     mediaSm: "(min-width:600px)",
     mediaMd: "(min-width:960px)",
     mediaLg: "(min-width:1280px)",
+    mediaXl: "(min-width:1920px)",
   },
 };
