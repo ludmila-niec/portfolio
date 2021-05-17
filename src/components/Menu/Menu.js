@@ -7,7 +7,7 @@ import { useLanguage } from "../../context/Language";
 // animation
 import { showMenu, showMenuLinks, hideMenuLinks } from "../../animation/menu";
 
-const Menu = ({ isOpen, onClose }) => {
+const Menu = ({ onClose }) => {
   const {
     state: { data, language },
     action: { changeLanguage },
@@ -18,13 +18,6 @@ const Menu = ({ isOpen, onClose }) => {
     showMenu(menuRef.current);
     showMenuLinks(".menu__link");
   }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      if (window.matchMedia("(max-width:599px").matches) return;
-      menuRef.current.style.top = window.pageYOffset + "px";
-    }
-  }, [isOpen]);
 
   function handleCloseMenu() {
     setTimeout(() => {

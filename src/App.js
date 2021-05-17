@@ -74,24 +74,26 @@ function App() {
   }
 
   return (
-    <Wrapper ref={wrapperRef}>
-      <Loading />
-      <header className="App-header">
-        <Navbar onOpen={handleOpenMenu} data={data.navbar} />
-        {menuIsOpen && <Menu isOpen={menuIsOpen} onClose={handleCloseMenu} />}
-        {menuIsOpen && !smallDevice && (
-          <Backdrop onClick={handleClickOutside} />
-        )}
-      </header>
-      <main style={{ overflowX: "hidden" }}>
-        <Suspense fallback={<Fallback />}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </Suspense>
-      </main>
-      <Contact data={data.contact} />
-    </Wrapper>
+    <>
+      {menuIsOpen && <Menu onClose={handleCloseMenu} />}
+      <Wrapper ref={wrapperRef}>
+        <Loading />
+        <header className="App-header">
+          <Navbar onOpen={handleOpenMenu} data={data.navbar} />
+          {menuIsOpen && !smallDevice && (
+            <Backdrop onClick={handleClickOutside} />
+          )}
+        </header>
+        <main style={{ overflowX: "hidden" }}>
+          <Suspense fallback={<Fallback />}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </Suspense>
+        </main>
+        <Contact data={data.contact} />
+      </Wrapper>
+    </>
   );
 }
 
