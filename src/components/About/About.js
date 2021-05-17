@@ -62,14 +62,13 @@ const About = ({ data, language }) => {
         self taught developer, looking forward to bring all my passion for
         design and creativity to the digital world. In 2020, I continued my
         studies taking the Acamica's Full Stack Web development course. With
-        everything I learnt, I was able to obtain new skills and began studying
-        React.js on my own.
+        everything I learnt, I was able to obtain new skills to continue my studies by my own and started learning React.js.
       </Paragraph>
       <Paragraph>
         I really enjoy creating beautiful and creative products where motion,
         interaction and design are perfectly integrated. I always focus on
-        developing the best for the user experience, work on the performance,
-        accesibility and take care for the details.
+        developing the best for the user experience, working on the performance,
+        accesibility and taking care for the details.
       </Paragraph>
     </>
   );
@@ -83,14 +82,13 @@ const About = ({ data, language }) => {
         toda mi pasión por el diseño y la creatividad al mundo digital. En el
         2020, continué mis estudios tomando el curso de Desarrollo Full Stack de
         Acamica. Con todo lo aprendido, obtuve nuevas habilidades y
-        conocimientos, que me permitieron empezar a aprender React.js de manera
-        por mi cuenta.
+        conocimientos, que me permitieron seguir estudiando por mi cuenta, y empezar a aprender React.js.
       </Paragraph>
       <Paragraph>
         Me encanta crear productos estéticos y creativos, donde las
         transiciones, interacciones y diseño se integran perfectamente. Siempre
         me concentro en desarrollar lo mejor para la experiencia del usuario,
-        trabajo en la performance, accesibilidad y me enfoco en los detalles.
+        trabajando en la performance, accesibilidad y enfocandome en los detalles.
       </Paragraph>
     </>
   );

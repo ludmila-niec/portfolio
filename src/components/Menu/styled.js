@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  /* width: 100%; */
+  width: 100%;
   height: 100vh;
   background-color: ${({ theme }) => theme.palette.colorMain};
   display: flex;
